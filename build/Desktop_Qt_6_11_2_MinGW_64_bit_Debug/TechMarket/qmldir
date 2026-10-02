@@ -1,0 +1,6 @@
+module TechMarket
+typeinfo appTechMarket.qmltypes
+prefer :/qt/qml/TechMarket/
+Main 254.0 Main.qml
+depends QtQuick
+
