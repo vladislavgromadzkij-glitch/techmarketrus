@@ -1,0 +1,1 @@
+//Реализация вызовов через QNetworkAccessManager и парсинг JSON

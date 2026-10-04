@@ -1,0 +1,1 @@
+//Заголовок QSortFilterProxyModel для локального поиска

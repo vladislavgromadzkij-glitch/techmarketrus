@@ -1,0 +1,1 @@
+//Заголовок QAbstractListModel для виртуализации списка в QML
