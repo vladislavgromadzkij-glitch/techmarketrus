@@ -41,6 +41,45 @@
 
 ```
 
+techmarket/
+│
+├── CMakeLists.txt                 # (Уже есть) Добавить в сборку модуль Network и новые файлы
+├── main.cpp                       # (Уже есть) Регистрация C++ типов в движке QML
+├── Main.qml                       # (Уже есть) Корневое окно, навигационный док, хэдер и поиск
+│
+├── core/                          # ЯДРО И ОБЩИЕ ТИПЫ
+│   ├── apptypes.h                 # Все enum: состояния, здоровье плат, правовые статусы РФ, упаковка
+│   ├── coreapplicationmanager.h   # Заголовок оркестратора (шина сигналов между модулями)
+│   └── coreapplicationmanager.cpp # Реализация маршрутизации данных
+│
+├── catalog/                       # МОДЕЛЬ ВИТРИНЫ И ДАННЫЕ
+│   ├── productitem.h              # Структура лота: спеки, дефекты, оптовая сетка, EAC-сертификаты
+│   ├── catalogmodel.h             # Заголовок QAbstractListModel для виртуализации списка в QML
+│   ├── catalogmodel.cpp           # Реализация ролей данных (data, rowCount, roleNames)
+│   ├── productfilterproxymodel.h  # Заголовок QSortFilterProxyModel для локального поиска
+│   └── productfilterproxymodel.cpp# Фильтрация по тексту поиска и чекбоксам без запросов к серверу
+│
+├── network/                       # СЕТЕВОЙ ТРАНСПОРТ (REST HTTP)
+│   ├── networkclient.h            # Заголовок асинхронного клиента к 127.0.0.1:8080
+│   └── networkclient.cpp          # Реализация вызовов через QNetworkAccessManager и парсинг JSON
+│
+├── listing/                       # ПУБЛИКАЦИЯ, ПРАВО И AI
+│   ├── listingeditor.h            # Заголовок валидатора создания лота
+│   └── listingeditor.cpp          # Проверка законов РФ (ЗоЗПП, 422-ФЗ) и эмуляция AI-экстракции спеков
+│
+├── orders/                        # ЗАКАЗЫ И ДОСТАВКА
+│   ├── ordermanager.h             # Заголовок логистического модуля
+│   └── ordermanager.cpp           # Расчет тарифов Яндекса, выбор ESD-упаковки, реестр документов
+│
+├── chat/                          # ИНЖЕНЕРНЫЕ ЧАТЫ И ТОРГ
+│   ├── chatmanager.h              # Заголовок диалогов
+│   └── chatmanager.cpp            # Обработка сообщений и логика согласования цен (OfferPending)
+│
+└── qml/                           # QML-ЭКРАНЫ (для декомпозиции Main.qml)
+    ├── CatalogView.qml            # Витрина: карточка лота с превью спеков и оптовой сеткой
+    ├── OrderDialog.qml            # Модальное окно оформления доставки Яндекса
+    ├── ChatView.qml               # Интерфейс диалога и виджет торга
+    └── VendorCabinet.qml          # Форма подачи объявления со статусом самозанятого/ИП
 ---
 
 ### Блок 1. Модель каталога и фильтрации (`CatalogModel` + `ProductFilterProxyModel`)
