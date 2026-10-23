@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechMarket Core — Industrial & Hardware Exchange</title>
+  <meta name="description" content="B2B-платформа для инженеров и поставщиков hardware. Каталог, логистика, чаты, форум, кабинет вендора.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⬢</span>
+        TECHMARKET <span class="logo-sub">/ Core</span>
+      </div>
+      <nav class="site-nav">
+        <a href="#demo">Демо</a>
+        <a href="#modules">Модули</a>
+        <a href="#download">Скачать</a>
+      </nav>
+      <button class="btn btn-primary" onclick="scrollToSection('download')">
+        ⬇ Скачать v1.0
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        v1.0.0 · Qt 6 / QML / C++20
+      </div>
+      <h1 class="hero-title">
+        Industrial &<br>
+        <span class="hero-accent">Hardware Exchange</span>
+      </h1>
+      <p class="hero-subtitle">
+        B2B-платформа для инженеров, поставщиков и производителей.
+        Каталог оборудования с EAC-сертификатами, трекинг поставок,
+        инженерные чаты и техническая Wiki — в одном десктопном клиенте.
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary btn-lg" onclick="scrollToSection('download')">
+          ⬇ Скачать для Windows
+        </button>
+        <button class="btn btn-secondary btn-lg" onclick="scrollToSection('demo')">
+          ▶ Смотреть демо
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">5</div>
+          <div class="stat-label">модулей</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">EAC</div>
+          <div class="stat-label">сертификация</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">B2B</div>
+          <div class="stat-label">платформа</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE DEMO -->
+  <section class="demo-section" id="demo">
+    <div class="demo-inner">
+      <div class="section-header">
+        <div class="section-tag">// 01</div>
+        <h2 class="section-title">Интерфейс в действии</h2>
+        <p class="section-subtitle">Переключайтесь между модулями — это живая копия QML-интерфейса</p>
+      </div>
+
+      <div class="app-window">
+        <div class="app-titlebar">
+          <div class="titlebar-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="titlebar-text">TechMarket Core — Industrial & Hardware Exchange</div>
+          <div class="titlebar-spacer"></div>
+        </div>
+
+        <div class="app-header">
+          <button class="icon-btn" title="Профиль">👤</button>
+          <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="demoSearch" placeholder="Поиск по артикулу, ТР ТС, ревизии кристалла, названию схемы...">
+          </div>
+          <button class="icon-btn" title="Настройки">⚙</button>
+        </div>
+
+        <div class="app-content" id="appContent"></div>
+
+        <div class="app-dock">
+          <button class="dock-btn active" data-index="0">
+            <span class="dock-icon">📦</span>
+            <span class="dock-label">Каталог</span>
+            <span class="dock-indicator"></span>
+          </button>
+          <button class="dock-btn" data-index="1">
+            <span class="dock-icon">🚚</span>
+            <span class="dock-label">Заказы</span>
+            <span class="dock-indicator"></span>
+          </button>
+          <button class="dock-btn" data-index="2">
+            <span class="dock-icon">💬</span>
+            <span class="dock-label">Чаты</span>
+            <span class="dock-indicator"></span>
+          </button>
+          <button class="dock-btn" data-index="3">
+            <span class="dock-icon">⚡</span>
+            <span class="dock-label">Форум</span>
+            <span class="dock-indicator"></span>
+          </button>
+          <button class="dock-btn" data-index="4">
+            <span class="dock-icon">🏷</span>
+            <span class="dock-label">Кабинет</span>
+            <span class="dock-indicator"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULES -->
+  <section class="modules-section" id="modules">
+    <div class="modules-inner">
+      <div class="section-header">
+        <div class="section-tag">// 02</div>
+        <h2 class="section-title">Пять модулей — одна платформа</h2>
+        <p class="section-subtitle">Каждый модуль решает конкретную задачу B2B-инженерии</p>
+      </div>
+
+      <div class="modules-grid">
+        <div class="module-card">
+          <div class="module-icon">📦</div>
+          <div class="module-number">01</div>
+          <h3 class="module-title">Каталог оборудования</h3>
+          <p class="module-desc">
+            Оптовые градации, тех. спеки в превью, EAC-сертификаты.
+            Поиск по артикулу, ТР ТС и ревизии кристалла.
+          </p>
+          <ul class="module-features">
+            <li>Превью даташитов</li>
+            <li>Фильтр по комплаенсу</li>
+            <li>История ревизий</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-icon">🚚</div>
+          <div class="module-number">02</div>
+          <h3 class="module-title">Логистика и заказы</h3>
+          <p class="module-desc">
+            Контроль упаковки (ESD, обрешетка), интеграция с Яндекс Доставкой,
+            сопроводительные УПД и акты.
+          </p>
+          <ul class="module-features">
+            <li>ESD-упаковка</li>
+            <li>Трекинг в реальном времени</li>
+            <li>Авто-генерация УПД</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-icon">💬</div>
+          <div class="module-number">03</div>
+          <h3 class="module-title">Инженерные чаты</h3>
+          <p class="module-desc">
+            Прямой диалог покупателя и вендора, протоколы согласования цен,
+            безопасные сделки с эскроу.
+          </p>
+          <ul class="module-features">
+            <li>Шифрование E2E</li>
+            <li>Эскроу-сделки</li>
+            <li>История торгов</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-icon">⚡</div>
+          <div class="module-number">04</div>
+          <h3 class="module-title">Технический форум и Wiki</h3>
+          <p class="module-desc">
+            Обсуждение ревизий чипов, дампы прошивок, обмен схемами,
+            база знаний сообщества.
+          </p>
+          <ul class="module-features">
+            <li>Markdown-редактор</li>
+            <li>Дампы и схемы</li>
+            <li>Репутация авторов</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <div class="module-icon">🏷</div>
+          <div class="module-number">05</div>
+          <h3 class="module-title">Кабинет вендора</h3>
+          <p class="module-desc">
+            Генерация лотов через нейросеть, комплаенс РФ,
+            оп
